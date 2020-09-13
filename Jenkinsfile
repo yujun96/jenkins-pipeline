@@ -1,8 +1,10 @@
 pipeline {
-    agent docker {
+    agent 
+      {docker {
         image 'node:10'
         args '-p 20000:8080'
     } 
+      }
     stages {
         stage('Build') { 
             steps {
@@ -11,15 +13,5 @@ pipeline {
                 sh 'echo " hello world" '
             }
         }
-        // stage('Test') { 
-        //     steps {
-        //         // 
-        //     }
-        // }
-        // stage('Deploy') { 
-        //     steps {
-        //         // 
-        //     }
-        // }
     }
 }
